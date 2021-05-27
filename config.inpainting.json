@@ -1,0 +1,40 @@
+{
+  "data": {
+    "train_gts_dataset": "got-10k",
+    "train_masks_dataset": "youtube-vos",
+    "validation_gts_dataset": "got-10k",
+    "validation_masks_dataset": "youtube-vos",
+    "test_dataset": "davis-2017",
+    "train_resize": true,
+    "min_mask_size": 0.05,
+    "max_mask_size": 0.15,
+    "validation_split": 0.2,
+    "train_size": [256, 256],
+    "test_size": [240, 480],
+    "frames_n": 2,
+    "frames_spacing": 10,
+    "frames_randomize": true,
+    "dilatation_filter_size": [3, 3],
+    "dilatation_iterations": 4,
+    "p_simulator_gts": 0,
+    "p_simulator_masks": 0,
+    "gts_movement_params": [25, 0.05, 0.15],
+    "masks_movement_params": [20, 0, 0],
+    "p_repeat": 0
+  },
+  "model": {
+    "alignment_network": "dfpn",
+    "alignment_experiment_name": "alignment_final",
+    "alignment_experiment_epoch": 125,
+    "loss_lambdas": [0.5, 2, 1, 0.5, 1]
+  },
+  "training": {
+    "batch_size": 12,
+    "train_max_iterations": 2000,
+    "validation_max_iterations": 200,
+    "test_max_iterations": 200,
+    "lr": 2e-4,
+    "lr_scheduler_step_size": 100,
+    "lr_scheduler_gamma": 0.5
+  }
+}
